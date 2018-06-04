@@ -21,7 +21,7 @@ The script names are available in the overview or by using the `-h` option.
 ## Overview
 
 * `pip-upgrade` - upgrades all available Python packages
-* `take-break` - reminds you to take a break every 20 minutes
+* `take-break` - reminds you to take a break from the screen every 20 minutes
 * `toggle-alert` - allows toggling `take-break` through the command line or a keybinding (Ctrl+F11)
 * `toggle-touchpad` - allows toggling the touchpad through the command line or a keybinding (Ctrl+F12)
 
