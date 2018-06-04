@@ -16,7 +16,7 @@ except ImportError:
 
 def strip_ext(filename: str) -> str:
     '''Strip the extension from a filename'''
-    return filename[filename.rfind('.'):]
+    return filename[:filename.rfind('.')]
 
 
 def set_keybinding(name: str, command: str, keys: str) -> str:
@@ -48,31 +48,31 @@ def set_keybinding(name: str, command: str, keys: str) -> str:
 
 def install_pip_upgrade():
     script = 'pip-upgrade.py'
-    shutil.move(script, bin_dir + strip_ext(script))
+    shutil.copy(script, bin_dir + strip_ext(script))
 
 
 def install_take_break():
     script = 'take-break.py'
     take_break_assets = '/usr/local/share/take-break'
 
-    shutil.move(script, bin_dir + strip_ext(script))
-    os.mkdir(take_break_assets)
-    shutil.move('assets/alert-image.jpg', take_break_assets)
+    shutil.copy(script, bin_dir + strip_ext(script))
+    os.makedirs(take_break_assets, exist_ok=True)
+    shutil.copy('assets/alert-image.jpg', take_break_assets)
 
-    crontab = 'PATH={}\n\n*/20 * * * * DISPLAY=:0 take-break -a'
+    crontab = 'PATH={}\n\n*/20 * * * * DISPLAY=:0 take-break -a\n'
     run('crontab', input=crontab.format(os.getenv('PATH')).encode())
 
 
 def install_toggle_alert():
     script = 'toggle-alert.sh'
-    shutil.move(script, bin_dir + strip_ext(script))
+    shutil.copy(script, bin_dir + strip_ext(script))
     if Gio is not None:
         set_keybinding('Toggle alert', 'toggle-alert', '<Primary>F11')
 
 
 def install_toggle_touchpad():
     script = 'toggle-touchpad.sh'
-    shutil.move(script, bin_dir + strip_ext(script))
+    shutil.copy(script, bin_dir + strip_ext(script))
     if Gio is not None:
         set_keybinding('Toggle touchpad', 'toggle-touchpad', '<Primary>F12')
 
