@@ -7,13 +7,13 @@ This repository contains my scripts, previously residing in Gists.
 Clone this repository and execute:
 
 ```bash
-$ ./configure.py
+$ sudo ./configure.py
 ```
 
 You can also install only specific scripts by listing their names with `-i` option:
 
 ```bash
-$ ./configure.py -i pip-upgrade take-break
+$ sudo ./configure.py -i pip-upgrade take-break
 ```
 
 The script names are available in the overview or by using the `-h` option.
@@ -28,9 +28,6 @@ The script names are available in the overview or by using the `-h` option.
 ## System requirements
 
 These scripts are built for Ubuntu but will work on other Linux flavors.
-
-The limitations:  
-* Automatically setting keybindings is only available if GSettings is present (GNOME-based DEs)
 
 ## Credits
 

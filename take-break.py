@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # GNOME Schedule Settings:
 #  Command: take-break -a
 #  X Application
